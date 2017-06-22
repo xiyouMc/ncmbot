@@ -1,4 +1,4 @@
-# ncmbot
+## ncmbot
 
 > NeteaseCloudMusicBot 的简称 `ncmbot` ，网易云音乐助手
 > 
