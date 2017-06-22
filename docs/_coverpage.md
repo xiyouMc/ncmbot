@@ -1,4 +1,4 @@
-# 网易云音乐(NCloudBot) 组件
+# NCloudBot
 
 > 网易云音乐(NCloudBot) 组件
 
