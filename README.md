@@ -1,13 +1,13 @@
 ![][py2x] ![][rating] ![][build] [![GitHub license][license]][license_file]
 
-NeteaseCloud Bot for Philharmonic™
+NeteaseCloudMusic Bot for Philharmonic™
 ===========
 
-[文档说明](http://xiyoumc.0x2048.com/ncbot/#/)
+[文档说明](http://xiyoumc.0x2048.com/ncmbot/#/)
 
 ## 简介
-* `ncbot` 是 NeteaseCloudBot (网易云音乐助手) 的简称
-* `ncbot` 是一个 Python 的第三方组件
+* `ncmbot` 是 NeteaseCloudMusicBot (网易云音乐助手) 的简称
+* `ncmbot` 是一个 Python 的第三方组件，用 Python 玩转网易云音乐
 * 实现了 网易云音乐 的 API 封装
 * 提供了轻量化的接口，高效的扩充音乐库
 * 同时，提供了私人 FM 等接口，你可以通过分析准确的找到自己喜欢的音乐
@@ -24,8 +24,8 @@ NeteaseCloud Bot for Philharmonic™
 
 ## 安装
 
-* pip install ncbot
-* easy_install ncbot
+* pip install ncmbot
+* easy_install ncmbot
 
 ## 接口列表
 1. 登录
@@ -49,29 +49,29 @@ NeteaseCloud Bot for Philharmonic™
 ## 使用
 
 ```python
-import ncbot
-bot = ncbot.login(phone='xxx', password='yyy')
+import ncmbot
+bot = ncmbot.login(phone='xxx', password='yyy')
 bot.content # bot.json()
 ```
-![](https://github.com/xiyouMc/ncbot/blob/master/image/login.png?raw=true)
+![](https://github.com/xiyouMc/ncmbot/blob/master/image/login.png?raw=true)
 
 ## 联系我
 
 * 关注微信公众号: DeveloperPython
 
-<img src="https://github.com/xiyouMc/ncbot/blob/master/image/qrcode.jpg?raw=true" width = "200" height = "200" alt="图片名称" align=center />   
+<img src="https://github.com/xiyouMc/ncmbot/blob/master/image/qrcode.jpg?raw=true" width = "200" height = "200" alt="图片名称" align=center />   
 
 
 [build]: https://img.shields.io/badge/build-passing-brightgreen.svg
 [rating]: https://img.shields.io/badge/rating-4.7%2F5-brightgreen.svg
-[license_file]: https://raw.githubusercontent.com/xiyouMc/ncbot/master/LICENSE
+[license_file]: https://raw.githubusercontent.com/xiyouMc/ncmbot/master/LICENSE
 [license]: https://img.shields.io/badge/license-ISC-blue.svg
-[stars]: https://img.shields.io/github/stars/xiyouMc/ncbot.svg
-[stargazers]: https://github.com/xiyouMc/ncbot/stargazers
-[fork]: https://img.shields.io/github/forks/xiyouMc/ncbot.svg
-[network]: https://github.com/xiyouMc/ncbot/network
+[stars]: https://img.shields.io/github/stars/xiyouMc/ncmbot.svg
+[stargazers]: https://github.com/xiyouMc/ncmbot/stargazers
+[fork]: https://img.shields.io/github/forks/xiyouMc/ncmbot.svg
+[network]: https://github.com/xiyouMc/ncmbot/network
 
 [py2x]: https://img.shields.io/badge/python-2.x-brightgreen.svg
 
-[issues_img]: https://img.shields.io/github/issues/xiyouMc/ncbot.svg
-[issues]: https://github.com/xiyouMc/ncbot/issues
+[issues_img]: https://img.shields.io/github/issues/xiyouMc/ncmbot.svg
+[issues]: https://github.com/xiyouMc/ncmbot/issues
