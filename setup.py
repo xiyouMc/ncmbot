@@ -23,7 +23,7 @@ required = []
 setup(
 	name='ncbot',
 	version='0.1.0',
-	description='Awesome Python Library, that\'s NeteaseCloud`s Bot.',
+	description='Awesome Python Library, that\'s NeteaseCloudMusic`s Bot.',
 	long_description=open('README.md').read(),
 	author='XiyouMc',
 	author_email='xiyoumc.dev@gmail.com',
