@@ -1,4 +1,4 @@
-# ncbot
+# ncmbot
 
 > 网易云音乐助手 - ncmbot 组件
 
