@@ -1,5 +1,7 @@
-# NCloudBot
+# ncbot
 
+> NeteaseCloudBot 的简称 `ncbot` ，网易云音乐助手
+> 
 > 这是一个网易云音乐的 Python 组件库，你可以随心所欲的玩音乐。
 
 ## 感谢
@@ -7,14 +9,14 @@
 - 感谢 [darknessomi](https://github.com/darknessomi/musicbox) 为本组件提供算法支持
 
 ## 简介
-NCloudBot 给你提供了多种接口，你可以登录、获取动态、获取音乐列表、下载音乐等等的。旨在将网易云音乐的接口封装为组件，提供给开发者在任何平台使用。
+ncbot 给你提供了多种接口，你可以登录、获取动态、获取音乐列表、下载音乐等等的。旨在将网易云音乐的接口封装为组件，提供给开发者在任何平台使用。
 
 
 ## 安装
 ```shell
-$ pip install NCloudBot
+$ pip install ncbot
 or
-$ easy_install NCloudBot
+$ easy_install ncbot
 ```
 
 ## 接口列表
@@ -53,21 +55,22 @@ $ easy_install NCloudBot
 
 **接口**
 
-`NCloudBot.login`
+`ncbot.login`
 
 **调用例子**
 
-`NCloudBot.login(phone='xxx', password='yyy')`
+`ncbot.login(phone='xxx', password='yyy')`
 
 **返回处理**
 
 ```python
-bot = NCloudBot.login(phone='xxx', password='yyy')
+bot = ncbot.login(phone='xxx', password='yyy')
 bot.content # bot.json()
 ```
 
 ### 获取用户歌单
-获取用户的歌单，包含收藏的歌单。不需要登录。
+获取用户的歌单，包含收藏的歌单。
+>不用登录
 
 
 **参数解释**
@@ -80,14 +83,15 @@ bot.content # bot.json()
 
 **接口**
 
-`NCloudBot.user_play_list`
+`ncbot.user_play_list`
 
 **调用例子**
 
-`NCloudBot.user_play_list(uid='36554272')`
+`ncbot.user_play_list(uid='36554272')`
 
 ### 获取用户电台
-获取用户的 FM 电台歌曲列表。无需登录
+获取用户的 FM 电台歌曲列表。
+>不用登录
 
 
 **参数解释**
@@ -100,14 +104,15 @@ bot.content # bot.json()
 
 **接口**
 
-`NCloudBot.user_dj`
+`ncbot.user_dj`
 
 **调用例子**
 
-`NCloudBot.user_dj(uid='36554272')`
+`ncbot.user_dj(uid='36554272')`
 
 ### 获取用户关注列表
-获取用户的关注列表。无需登录
+获取用户的关注列表。
+>不用登录
 
 **参数解释**
 
@@ -119,14 +124,15 @@ bot.content # bot.json()
 
 **接口**
 
-` NCloudBot.user_follows`
+` ncbot.user_follows`
 
 **调用例子**
 
-` NCloudBot.user_follows(uid='36554272')`
+` ncbot.user_follows(uid='36554272')`
 
 ### 获取用户粉丝
-获取用户的粉丝列表。无需登录
+获取用户的粉丝列表。
+>不用登录
 
 **参数解释**
 
@@ -138,14 +144,15 @@ bot.content # bot.json()
 
 **接口**
 
-` NCloudBot.user_followeds`
+` ncbot.user_followeds`
 
 **调用例子**
 
-` NCloudBot.user_followeds(uid='36554272')`
+` ncbot.user_followeds(uid='36554272')`
 
 ### 获取用户动态
-获取用户的动态。无需登录
+获取用户的动态。
+>不用登录
 
 **参数解释**
 
@@ -156,14 +163,15 @@ bot.content # bot.json()
 
 **接口**
 
-` NCloudBot.user_event`
+` ncbot.user_event`
 
 **调用例子**
 
-` NCloudBot.user_event(uid='36554272')`
+` ncbot.user_event(uid='36554272')`
 
 ### 获取用户播放列表
-获取用户的播放列表。无需登录。
+获取用户的播放列表。
+>不用登录。
 
 **参数解释**
 
@@ -175,32 +183,35 @@ bot.content # bot.json()
 
 **接口**
 
-`NCloudBot.user_record`
+`ncbot.user_record`
 
 **调用例子**
 
-`NCloudBot.user_record(uid='36554272')`
+`ncbot.user_record(uid='36554272')`
 
 
 ### 获取好友的动态
-需要登录。获取用户界面的所有动态，包括分享视频、音乐、动态等等的。
+获取用户界面的所有动态，包括分享视频、音乐、动态等等的。
+>必须登录
 
 
 **接口**
 
-`NCloudBot.event()`
+`ncbot.event()`
 
 **调用例子**
 
 ```python
-NCloudBot.login(phone='18291994584', password='cxdcxd')
-bot = NCloudBot.event()
+ncbot.login(phone='18291994584', password='cxdcxd')
+bot = ncbot.event()
 print bot.content
 ```
 
 
 ### 获取精品歌单
-获取网易云音乐的精品歌单。无需登录。
+获取网易云音乐的精品歌单。
+
+>不用登录。
 
 **参数解释**
 
@@ -214,17 +225,17 @@ print bot.content
 
 **接口**
 
-`NCloudBot.top_playlist_highquality`
+`ncbot.top_playlist_highquality`
 
 **调用例子**
 
-`NCloudBot.top_playlist_highquality(cat='华语')`
+`ncbot.top_playlist_highquality(cat='华语')`
 
 
 ### 获取歌单中的所有音乐
 由于获取精品歌单，只能看到歌单名字不能拿到歌单中的音乐，因此增加该接口传入歌单ID，获取歌单中的所有音乐.
 
-无需登录
+>不用登录
 
 **参数解释**
 
@@ -237,18 +248,18 @@ print bot.content
 
 **接口**
 
-`NCloudBot.play_list_detail`
+`ncbot.play_list_detail`
 
 **调用例子**
 
-`NCloudBot.play_list_detail(id='326432061')`
+`ncbot.play_list_detail(id='326432061')`
 
 
 
 ### 获取音乐的下载地址
 通过指定音乐的 ID 来获取该音乐的下载地址。其中 ID 可传入数组。
 
-无需登录
+>不用登录
 
 **参数解释**
 
@@ -260,19 +271,19 @@ print bot.content
 
 **接口**
 
-`NCloudBot.music_url`
+`ncbot.music_url`
 
 **调用例子**
 
 ```python
-r = NCloudBot.music_url(ids=[68302,])
+r = ncbot.music_url(ids=[68302,])
 print r.content
 ```
 
 ### 搜索
 可通过歌曲、歌手、专辑等关键字搜索歌曲列表
 
-无需登录
+>不用登录
 
 **参数解释**
 
@@ -286,18 +297,18 @@ print r.content
 
 **接口**
 
-`NCloudBot.search`
+`ncbot.search`
 
 **调用例子**
 
 ```python
-NCloudBot.search(keyword='东风破')
+ncbot.search(keyword='东风破')
 ```
 
 ### 获取歌词
 通过歌曲 ID 获取与之对应的歌词
 
-无需登录
+>不用登录
 
 **参数解释**
 
@@ -307,18 +318,18 @@ NCloudBot.search(keyword='东风破')
 
 **接口**
 
-`NCloudBot.lyric`
+`ncbot.lyric`
 
 **调用例子**
 
 ```python
-NCloudBot.lyric(id = 68302)
+ncbot.lyric(id = 68302)
 ```
 
 ### 获取音乐的评论
 通过歌曲 ID 获取该歌曲的评论
 
-无需登录
+>不用登录
 
 **参数解释**
 
@@ -329,18 +340,18 @@ NCloudBot.lyric(id = 68302)
 
 **接口**
 
-`NCloudBot.music_comment`
+`ncbot.music_comment`
 
 **调用例子**
 
 ```python
-NCloudBot.music_comment(id=68302)
+ncbot.music_comment(id=68302)
 ```
 
 ### 获取歌曲详情
 通过歌曲 ID 获取该歌曲的详情，并支持数组
 
-无需登录
+>不用登录
 
 **参数解释**
 
@@ -351,12 +362,12 @@ NCloudBot.music_comment(id=68302)
 
 **接口**
 
-`NCloudBot.song_detail`
+`ncbot.song_detail`
 
 **调用例子**
 
 ```python
-r = NCloudBot.song_detail([
+r = ncbot.song_detail([
             68302,
             30500857,
         ])
@@ -366,7 +377,7 @@ print r.content
 ### 获取私人 FM
 通过歌曲 ID 获取该歌曲的详情，并支持数组
 
-必须登录
+>必须登录
 
 **参数解释**
 
@@ -377,9 +388,12 @@ print r.content
 
 **接口**
 
-`NCloudBot.personal_fm`
+`ncbot.personal_fm`
 
 **调用例子**
 
 ```python
-NCloudBot.personal_fm()```
+ncbot.login(phone='xxx', password='yyy')
+r = ncbot.personal_fm()
+print r.content
+```

@@ -14,8 +14,9 @@ import cookielib
 import traceback
 from .util.encrypt import encrypted_request
 from .util import cookiesJar
+from utils import get_encoding_from_headers
 
-__title__ = 'NCloudBot'
+__title__ = 'ncbot'
 __version__ = '0.1.0'
 __build__ = 0x000100
 __author__ = 'XiyouMc'
@@ -132,6 +133,7 @@ class NCloudBot(object):
         #     cookiesJar.save_cookies(resp, NCloudBot.username)
         self.response.content = resp.content
         self.response.status_code = resp.status_code
+        self.response.headers = resp.headers
 
     def send(self):
         success = False
@@ -173,6 +175,7 @@ class NCloudBot(object):
 class Response(object):
     def __init__(self):
         self.content = None
+        self.headers = None
         self.status_code = None
         self.ok = False
         self.error = None
@@ -183,6 +186,15 @@ class Response(object):
     def raise_for_status(self):
         if self.error:
             raise self.error
+
+    def json(self):
+        """Returns the json-encoded content of a response, if any."""
+
+        if not self.headers and len(self.content) > 3:
+            encoding = get_encoding_from_headers(self.headers)
+            if encoding is not None:
+                return json.loads(self.content.decode(encoding))
+        return json.loads(self.content)
 
 
 def login(password, phone=None, email=None, rememberLogin=True):
