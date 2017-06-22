@@ -1,4 +1,4 @@
-![][py2x] ![][rating] ![][build] [![GitHub license][license]][LICENSE]
+![][py2x] ![][rating] ![][build] [![GitHub license][license]][license_file]
 
 NeteaseCloud Bot for Philharmonic™
 ===========
@@ -64,7 +64,7 @@ bot.content # bot.json()
 
 [build]: https://img.shields.io/badge/build-passing-brightgreen.svg
 [rating]: https://img.shields.io/badge/rating-4.7%2F5-brightgreen.svg
-[LICENSE]: https://raw.githubusercontent.com/xiyouMc/ncbot/master/LICENSE
+[license_file]: https://raw.githubusercontent.com/xiyouMc/ncbot/master/LICENSE
 [license]: https://img.shields.io/badge/license-ISC-blue.svg
 [stars]: https://img.shields.io/github/stars/xiyouMc/ncbot.svg
 [stargazers]: https://github.com/xiyouMc/ncbot/stargazers
