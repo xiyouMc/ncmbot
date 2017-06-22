@@ -22,8 +22,8 @@ class NCloudBotTestSuite(unittest.TestCase):
         pass
 
     def test_SEARCH(self):
-        # r = NCloudBot.search(keyword='Oh')
-        # print r.content
+        r = NCloudBot.search(keyword='Oh')
+        print r.content
         pass
 
     def test_USER_FOLLOWS(self):
@@ -32,34 +32,34 @@ class NCloudBotTestSuite(unittest.TestCase):
         pass
 
     def test_USER_FOLLOWEDS(self):
-        # r = NCloudBot.user_followeds(uid='36554272')
-        # print r.content
+        r = NCloudBot.user_followeds(uid='36554272')
+        print r.content
         pass
 
     def test_USER_EVENT(self):
-        # r = NCloudBot.user_event(uid='36554272')
-        # print r.content
+        r = NCloudBot.user_event(uid='36554272')
+        print r.content
         pass
 
     def test_USER_RECORD(self):
-        # r = NCloudBot.user_record(uid='36554272')
-        # print r.content
+        r = NCloudBot.user_record(uid='36554272')
+        print r.content
         pass
 
     def test_EVENT(self):
-        # l = NCloudBot.login(phone='18291994584', password='cxdcxd')
-        # r = NCloudBot.event()
-        # print r.content
+        NCloudBot.login(phone='18291994584', password='cxdcxd')
+        r = NCloudBot.event()
+        print r.content
         pass
 
     def test_TOP_PLAYLIST_HIGHQUALITY(self):
-        # r = NCloudBot.top_playlist_highquality()
-        # print r.content
+        r = NCloudBot.top_playlist_highquality()
+        print r.content
         pass
 
     def test_PLAY_LIST_DETAIL(self):
-        # r = NCloudBot.play_list_detail(id='326432061')
-        # print r.content
+        r = NCloudBot.play_list_detail(id='326432061')
+        print r.content
         pass
 
     def test_LOGIN(self):
@@ -68,10 +68,10 @@ class NCloudBotTestSuite(unittest.TestCase):
         pass
 
     def test_MUSIC_URL(self):
-        # r = NCloudBot.music_url(ids=[
-        #     68302,
-        # ])
-        # print r.content
+        r = NCloudBot.music_url(ids=[
+            68302,
+        ])
+        print r.content
         pass
 
     def test_LYRIC(self):
