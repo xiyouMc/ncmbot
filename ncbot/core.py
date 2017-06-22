@@ -23,6 +23,13 @@ __author__ = 'XiyouMc'
 __license__ = 'ISC'
 __copyright__ = 'Copyright 2017 XiyouMc'
 
+__all__ = [
+    'NCloudBot', 'Response', 'login', 'user_play_list', 'user_dj', 'search',
+    'user_follows', 'user_followeds', 'user_event', 'event',
+    'top_playlist_highquality', 'play_list_detail', 'music_url', 'lyric',
+    'music_comment', 'song_detail', 'personal_fm'
+]
+
 
 class NCloudBot(object):
     """
@@ -84,7 +91,7 @@ class NCloudBot(object):
         self.response = Response()
 
     def __repr__(self):
-        return '<Request [%s]>' % (self.method)
+        return '<NCloudBot [%s]>' % (self.method)
 
     def __setattr__(self, name, value):
         if (name == 'method') and (value):
@@ -93,6 +100,8 @@ class NCloudBot(object):
         object.__setattr__(self, name, value)
 
     def _get_webapi_requests(self):
+        """Update headers of webapi for Requests."""
+
         headers = {
             'Accept':
             '*/*',
@@ -128,6 +137,7 @@ class NCloudBot(object):
         return NCloudBot.req
 
     def _build_response(self, resp):
+        """Build internal Response object from given response."""
         # rememberLogin
         # if self.method is 'LOGIN' and resp.json().get('code') == 200:
         #     cookiesJar.save_cookies(resp, NCloudBot.username)
@@ -136,6 +146,7 @@ class NCloudBot(object):
         self.response.headers = resp.headers
 
     def send(self):
+        """Sens the request."""
         success = False
         if self.method is None:
             raise ParamsError()
@@ -173,6 +184,11 @@ class NCloudBot(object):
 
 
 class Response(object):
+    """
+    The :class:`Response` object. All :class:`NCloudBot` objects contain a 
+    :class:`NCloudBot.response <response>` attribute.
+    """
+
     def __init__(self):
         self.content = None
         self.headers = None
@@ -198,6 +214,12 @@ class Response(object):
 
 
 def login(password, phone=None, email=None, rememberLogin=True):
+    """ 登录接口，返回 :class:'Response' 对象
+    :param password: 网易云音乐的密码
+    :param phone: (optional) 手机登录
+    :param email: (optional) 邮箱登录
+    :param rememberLogin: (optional) 是否记住密码，默认 True
+    """
     if (phone is None) and (email is None):
         raise ParamsError()
     if password is None:
@@ -220,6 +242,12 @@ def login(password, phone=None, email=None, rememberLogin=True):
 
 
 def user_play_list(uid, offset=0, limit=1000):
+    """获取用户歌单，包含收藏的歌单
+    
+    :param uid: 用户的ID，可通过登录或者其他接口获取
+    :param offset: (optional) 分段起始位置，默认 0
+    :param limit: (optional) 数据上限多少行，默认 1000
+    """
     if uid is None:
         raise ParamsError()
     r = NCloudBot()
@@ -230,6 +258,12 @@ def user_play_list(uid, offset=0, limit=1000):
 
 
 def user_dj(uid, offset=0, limit=30):
+    """获取用户电台数据
+
+    :param uid: 用户的ID，可通过登录或者其他接口获取
+    :param offset: (optional) 分段起始位置，默认 0
+    :param limit: (optional) 数据上限多少行，默认 30
+    """
     if uid is None:
         raise ParamsError()
     r = NCloudBot()
@@ -242,6 +276,13 @@ def user_dj(uid, offset=0, limit=30):
 
 
 def search(keyword, type=1, offset=0, limit=30):
+    """搜索歌曲，支持搜索歌曲、歌手、专辑等
+
+    :param keyword: 关键词
+    :param type: (optional) 搜索类型，1: 单曲, 100: 歌手, 1000: 歌单, 1002: 用户
+    :param offset: (optional) 分段起始位置，默认 0
+    :param limit: (optional) 数据上限多少行，默认 30
+    """
     if keyword is None:
         raise ParamsError()
     r = NCloudBot()
@@ -258,6 +299,12 @@ def search(keyword, type=1, offset=0, limit=30):
 
 
 def user_follows(uid, offset='0', limit=30):
+    """获取用户关注列表
+
+    :param uid: 用户的ID，可通过登录或者其他接口获取
+    :param offset: (optional) 分段起始位置，默认 0
+    :param limit: (optional) 数据上限多少行，默认 30
+    """
     if uid is None:
         raise ParamsError()
     r = NCloudBot()
@@ -270,6 +317,12 @@ def user_follows(uid, offset='0', limit=30):
 
 
 def user_followeds(uid, offset='0', limit=30):
+    """获取用户粉丝列表
+
+    :param uid: 用户的ID，可通过登录或者其他接口获取
+    :param offset: (optional) 分段起始位置，默认 0
+    :param limit: (optional) 数据上限多少行，默认 30
+    """
     if uid is None:
         raise ParamsError()
     r = NCloudBot()
@@ -286,6 +339,10 @@ def user_followeds(uid, offset='0', limit=30):
 
 
 def user_event(uid):
+    """获取用户动态
+
+    :param uid: 用户的ID，可通过登录或者其他接口获取
+    """
     if uid is None:
         raise ParamsError()
     r = NCloudBot()
@@ -298,6 +355,11 @@ def user_event(uid):
 
 
 def user_record(uid, type=0):
+    """获取用户的播放列表
+
+    :param uid: 用户的ID，可通过登录或者其他接口获取
+    :param type: (optional) 数据类型，0：获取所有记录，1：获取 weekData
+    """
     if uid is None:
         raise ParamsError()
     r = NCloudBot()
@@ -309,6 +371,9 @@ def user_record(uid, type=0):
 
 
 def event():
+    """获取好友的动态，包括分享视频、音乐、动态等
+
+    """
     r = NCloudBot()
     r.method = 'EVENT'
     r.data = {"csrf_token": ""}
@@ -319,6 +384,12 @@ def event():
 
 # TOP_PLAYLIST_HIGHQUALITY
 def top_playlist_highquality(cat='全部', offset=0, limit=20):
+    """获取网易云音乐的精品歌单
+
+    :param cat: (optional) 歌单类型，默认 ‘全部’，比如 华语、欧美等
+    :param offset: (optional) 分段起始位置，默认 0
+    :param limit: (optional) 数据上限多少行，默认 20
+    """
     r = NCloudBot()
     r.method = 'TOP_PLAYLIST_HIGHQUALITY'
     r.data = {'cat': cat, 'offset': offset, 'limit': limit}
@@ -329,6 +400,12 @@ def top_playlist_highquality(cat='全部', offset=0, limit=20):
 
 # PLAY_LIST_DETAIL
 def play_list_detail(id, limit=20):
+    """获取歌单中的所有音乐。由于获取精品中，只能看到歌单名字和 ID 并没有歌单的音乐，因此增加该接口传入歌单 ID
+    获取歌单中的所有音乐.
+
+    :param id: 歌单的ID
+    :param limit: (optional) 数据上限多少行，默认 20
+    """
     if id is None:
         raise ParamsError()
     r = NCloudBot()
@@ -341,6 +418,10 @@ def play_list_detail(id, limit=20):
 
 # MUSIC_URL
 def music_url(ids=[]):
+    """通过歌曲 ID 获取歌曲下载地址
+
+    :param ids: 歌曲 ID 的 list 
+    """
     if not isinstance(ids, list):
         raise ParamsError()
     r = NCloudBot()
@@ -353,6 +434,10 @@ def music_url(ids=[]):
 
 # LYRIC
 def lyric(id):
+    """通过歌曲 ID 获取歌曲歌词地址
+
+    :param id: 歌曲ID
+    """
     if id is None:
         raise ParamsError()
     r = NCloudBot()
@@ -365,6 +450,12 @@ def lyric(id):
 
 # MUSIC_COMMENT
 def music_comment(id, offset=0, limit=20):
+    """获取歌曲的评论列表
+
+    :param id: 歌曲 ID
+    :param offset: (optional) 分段起始位置，默认 0
+    :param limit: (optional) 数据上限多少行，默认 20
+    """
     if id is None:
         raise ParamsError()
     r = NCloudBot()
@@ -391,6 +482,10 @@ def album_comment(id, offset=0, limit=20):
 
 # SONG_DETAIL
 def song_detail(ids):
+    """通过歌曲 ID 获取歌曲的详细信息
+
+    :param ids: 歌曲 ID 的 list
+    """
     if not isinstance(ids, list):
         raise ParamsError()
     c = []
@@ -406,6 +501,8 @@ def song_detail(ids):
 
 # PERSONAL_FM
 def personal_fm():
+    """ 个人的 FM ,必须在登录之后调用，即 login 之后调用
+    """
     r = NCloudBot()
     r.method = 'PERSONAL_FM'
     r.data = {"csrf_token": ""}

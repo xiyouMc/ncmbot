@@ -13,7 +13,7 @@ if sys.argv[-1] == "publish":
 	sys.exit()
 
 if sys.argv[-1] == "test":
-	os.system("python test_NCloudBot.py")
+	os.system("python test_ncbot.py")
 	sys.exit()
 	
 required = []
@@ -21,18 +21,16 @@ required = []
 # if python > 2.6, require simplejson
 
 setup(
-	name='requests',
-	version='0.2.3',
-	description='Awesome Python HTTP Library that\'s actually usable.',
-	long_description=open('README.rst').read() + '\n\n' +
-	                 open('HISTORY.rst').read(),
-	author='Kenneth Reitz',
-	author_email='me@kennethreitz.com',
-	url='https://github.com/kennethreitz/requests',
-	packages= [
-		'requests',
-		'requests.packages',
-		'requests.packages.poster'
+	name='ncbot',
+	version='0.1.0',
+	description='Awesome Python Library, that\'s NeteaseCloud`s Bot.',
+	long_description=open('README.md').read(),
+	author='XiyouMc',
+	author_email='xiyoumc.dev@gmail.com',
+	url='https://github.com/xiyoumc/ncbot',
+	packages=[
+		'ncbot',
+		'ncbot.util'
 	],
 	install_requires=required,
 	license='ISC',
