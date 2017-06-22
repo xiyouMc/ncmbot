@@ -75,13 +75,13 @@ class NCloudBotTestSuite(unittest.TestCase):
         pass
 
     def test_LYRIC(self):
-        # r = NCloudBot.lyric(id = 68302)
-        # print 'test_LYRIC',r.content
+        r = NCloudBot.lyric(id = 68302)
+        print 'test_LYRIC',r.content
         pass
 
     def test_MUSIC_COMMENT(self):
         r = NCloudBot.music_comment(id=68302)
-        # print 'test_MUSIC_COMMENT', r.content
+        print 'test_MUSIC_COMMENT', r.content
 
     # def test_ALBUM_COMMENT(self):
     #     r = NCloudBot.album_comment(id=)

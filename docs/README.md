@@ -1,6 +1,9 @@
 # NCloudBot
 
 > 这是一个网易云音乐的 Python 组件库，你可以随心所欲的玩音乐。
+## 感谢
+
+- 感谢 [darknessomi](https://github.com/darknessomi/musicbox) 为本组件提供算法支持
 
 ## 简介
 NCloudBot 给你提供了多种接口，你可以登录、获取动态、获取音乐列表、下载音乐等等的。旨在将网易云音乐的接口封装为组件，提供给开发者在任何平台使用。
@@ -287,3 +290,93 @@ print r.content
 ```python
 NCloudBot.search(keyword='东风破')
 ```
+
+### 获取歌词
+通过歌曲 ID 获取与之对应的歌词
+
+无需登录
+
+**参数解释**
+
+|参数名|可选|简介|
+|----|----|----|
+|id|必选|歌曲ID
+
+**接口**
+
+`NCloudBot.lyric`
+
+**调用例子**
+
+```python
+NCloudBot.lyric(id = 68302)
+```
+
+### 获取音乐的评论
+通过歌曲 ID 获取该歌曲的评论
+
+无需登录
+
+**参数解释**
+
+|参数名|可选|简介|
+|----|----|----|
+|id|必选|歌曲ID
+
+
+**接口**
+
+`NCloudBot.music_comment`
+
+**调用例子**
+
+```python
+NCloudBot.music_comment(id=68302)
+```
+
+### 获取歌曲详情
+通过歌曲 ID 获取该歌曲的详情，并支持数组
+
+无需登录
+
+**参数解释**
+
+|参数名|可选|简介|
+|----|----|----|
+|ids|必选|歌曲 ID 的 list
+
+
+**接口**
+
+`NCloudBot.song_detail`
+
+**调用例子**
+
+```python
+r = NCloudBot.song_detail([
+            68302,
+            30500857,
+        ])
+print r.content
+```
+
+### 获取私人 FM
+通过歌曲 ID 获取该歌曲的详情，并支持数组
+
+必须登录
+
+**参数解释**
+
+|参数名|可选|简介|
+|----|----|----|
+|ids|必选|歌曲 ID 的 list
+
+
+**接口**
+
+`NCloudBot.personal_fm`
+
+**调用例子**
+
+```python
+NCloudBot.personal_fm()```
