@@ -1,6 +1,7 @@
 # NCloudBot
 
 > 这是一个网易云音乐的 Python 组件库，你可以随心所欲的玩音乐。
+
 ## 感谢
 
 - 感谢 [darknessomi](https://github.com/darknessomi/musicbox) 为本组件提供算法支持
