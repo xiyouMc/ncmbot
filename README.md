@@ -7,10 +7,17 @@ NeteaseCloudMusic Bot for Philharmonic™
 
 ## 简介
 * `ncmbot` 是 NeteaseCloudMusicBot (网易云音乐助手) 的简称
-* `ncmbot` 是一个 Python 的第三方组件，用 Python 玩转网易云音乐
+* `ncmbot` 是一个 Python 的`第三方组件`，用 Python 玩转网易云音乐
 * 实现了 网易云音乐 的 API 封装
 * 提供了轻量化的接口，高效的扩充音乐库
 * 同时，提供了私人 FM 等接口，你可以通过分析准确的找到自己喜欢的音乐
+
+
+## 安装
+
+* pip install ncmbot
+* easy_install ncmbot
+
 
 ## 环境、架构
 
@@ -21,11 +28,6 @@ NeteaseCloudMusic Bot for Philharmonic™
 * 主要使用了 Requests 开源库
 * 基于网易云音乐 API 的定义，完成 Python 组件的封装
 * 轻量化的接口设计
-
-## 安装
-
-* pip install ncmbot
-* easy_install ncmbot
 
 ## 接口列表
 1. 登录
