@@ -9,6 +9,14 @@
 ## 简介
 NCloudBot 给你提供了多种接口，你可以登录、获取动态、获取音乐列表、下载音乐等等的。旨在将网易云音乐的接口封装为组件，提供给开发者在任何平台使用。
 
+
+## 安装
+```shell
+$ pip install NCloudBot
+or
+$ easy_install NCloudBot
+```
+
 ## 接口列表
 1. 登录
 2. 获取用户歌单
@@ -27,12 +35,6 @@ NCloudBot 给你提供了多种接口，你可以登录、获取动态、获取�
 15. 获取歌曲详情
 16. 获取私人 FM
 
-## 安装
-```shell
-$ pip install NCloudBot
-or
-$ easy_install NCloudBot
-```
 
 ## 接口文档
 - 其中登录等部分接口不能调用太频繁，否则会出现 ip 高频错误，若需要高频调用，可以增加 IP 代理池
