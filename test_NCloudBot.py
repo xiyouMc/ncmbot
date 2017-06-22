@@ -17,8 +17,8 @@ class NCloudBotTestSuite(unittest.TestCase):
         pass
 
     def test_USER_DJ(self):
-        # r = NCloudBot.user_dj(uid='36554272')
-        # print r.content
+        r = NCloudBot.user_dj(uid='36554272')
+        print r.content
         pass
 
     def test_SEARCH(self):
@@ -27,8 +27,8 @@ class NCloudBotTestSuite(unittest.TestCase):
         pass
 
     def test_USER_FOLLOWS(self):
-        # r = NCloudBot.user_follows(uid='36554272')
-        # print r.content
+        r = NCloudBot.user_follows(uid='36554272')
+        print r.content
         pass
 
     def test_USER_FOLLOWEDS(self):

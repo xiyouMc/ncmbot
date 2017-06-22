@@ -7,7 +7,6 @@ NCloudBot 给你提供了多种接口，你可以登录、获取动态、获取�
 
 ## 接口列表
 1. 登录
-2. 获取用户信息
 3. 获取用户歌单
 4. 获取用户电台
 5. 获取用户关注列表
@@ -53,3 +52,69 @@ $ easy_install NCloudBot
 **调用例子**
 
 `NCloudBot.login(phone='xxx', password='yyy')`
+
+**返回处理**
+
+```python
+bot = NCloudBot.login(phone='xxx', password='yyy')
+bot.content # bot.json()
+```
+
+### 获取用户歌单
+获取用户的歌单，包含收藏的歌单。不需要登录。
+
+
+**参数解释**
+
+|参数名|可选|简介|
+|----|----|----|
+|uid|必选|用户的ID，ID可以通过登录、或者其他接口获取
+|offset|可选，默认0| 分段处理，开始位置
+|limit| 可选，默认1000 |最多获取多少行数据
+
+**接口**
+
+`NCloudBot.user_play_list`
+
+**调用例子**
+
+`NCloudBot.user_play_list(uid='36554272')`
+
+### 获取用户电台
+获取用户的 FM 电台歌曲列表。无需登录
+
+
+**参数解释**
+
+|参数名|可选|简介|
+|----|----|----|
+|uid|必选|用户的ID，ID可以通过登录、或者其他接口获取
+|offset|可选，默认0| 分段处理，开始位置
+|limit| 可选，默认30 |最多获取多少行数据
+
+**接口**
+
+`NCloudBot.user_dj`
+
+**调用例子**
+
+`NCloudBot.user_dj(uid='36554272')`
+
+### 获取用户关注列表
+获取用户的关注列表。无需登录
+
+**参数解释**
+
+|参数名|可选|简介|
+|----|----|----|
+|uid|必选|用户的ID，ID可以通过登录、或者其他接口获取
+|offset|可选，默认0| 分段处理，开始位置
+|limit| 可选，默认30 |最多获取多少行数据
+
+**接口**
+
+` NCloudBot.user_follows`
+
+**调用例子**
+
+` NCloudBot.user_follows(uid='36554272')`
