@@ -1,13 +1,12 @@
-# NCloudBot
+# ncbot
 
-> 网易云音乐(NCloudBot) 组件
+> 网易云音乐(ncbot) 组件
 
-- 全部接口已升级到最新
-- 具备登录接口
-- 更完善的文档
+- NeteaseCloudBot 的简称
+- 让你玩转网易云音乐
 
 
-[GitHub](https://github.com/xiyouMc/NCloudBot)
-[Get Started](#NCloudBot)
+[GitHub](https://github.com/xiyouMc/ncbot)
+[Get Started](#ncbot)
 
 ![color](#ffffff)
