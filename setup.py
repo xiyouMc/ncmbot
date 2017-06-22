@@ -13,7 +13,7 @@ if sys.argv[-1] == "publish":
 	sys.exit()
 
 if sys.argv[-1] == "test":
-	os.system("python test_ncbot.py")
+	os.system("python test_ncmbot.py")
 	sys.exit()
 	
 required = []
@@ -21,16 +21,16 @@ required = []
 # if python > 2.6, require simplejson
 
 setup(
-	name='ncbot',
+	name='ncmbot',
 	version='0.1.0',
 	description='Awesome Python Library, that\'s NeteaseCloudMusic`s Bot.',
 	long_description=open('README.md').read(),
 	author='XiyouMc',
 	author_email='xiyoumc.dev@gmail.com',
-	url='https://github.com/xiyoumc/ncbot',
+	url='https://github.com/xiyoumc/ncmbot',
 	packages=[
-		'ncbot',
-		'ncbot.util'
+		'ncmbot',
+		'ncmbot.util'
 	],
 	install_requires=required,
 	license='ISC',

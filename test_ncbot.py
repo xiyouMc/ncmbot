@@ -1,6 +1,6 @@
 # coding:utf-8
 import unittest
-import ncbot
+import ncmbot
 
 
 class NCloudBotTestSuite(unittest.TestCase):
@@ -17,86 +17,87 @@ class NCloudBotTestSuite(unittest.TestCase):
     #     pass
 
     def test_USER_DJ(self):
-        r = ncbot.user_dj(uid='36554272')
-        print r.content
+        r = ncmbot.user_dj(uid='36554272')
+        print 'test_USER_DJ', r.content
         pass
 
     def test_SEARCH(self):
-        r = ncbot.search(keyword='Oh')
-        print r.content
+        r = ncmbot.search(keyword='Oh')
+        print 'test_SEARCH', r.content
         pass
 
     def test_USER_FOLLOWS(self):
-        r = ncbot.user_follows(uid='36554272')
-        print r.content
+        r = ncmbot.user_follows(uid='36554272')
+        print 'test_USER_FOLLOWS', r.content
         pass
 
     def test_USER_FOLLOWEDS(self):
-        r = ncbot.user_followeds(uid='36554272')
-        print r.content
+        r = ncmbot.user_followeds(uid='36554272')
+        print 'test_USER_FOLLOWEDS', r.content
         pass
 
     def test_USER_EVENT(self):
-        r = ncbot.user_event(uid='36554272')
-        print r.content
+        r = ncmbot.user_event(uid='36554272')
+        print 'test_USER_EVENT', r.content
         pass
 
     def test_USER_RECORD(self):
-        r = ncbot.user_record(uid='36554272')
-        print r.content
+        ncmbot.login(phone='xxx', password='yyy')
+        r = ncmbot.user_record(uid='264893698')
+        print 'test_USER_RECORD', r.content
         pass
 
     def test_EVENT(self):
-        ncbot.login(phone='18291994584', password='cxdcxd')
-        r = ncbot.event()
-        print r.content
+        ncmbot.login(phone='xxx', password='yyy')
+        r = ncmbot.event()
+        print 'test_EVENT', r.content
         pass
 
     def test_TOP_PLAYLIST_HIGHQUALITY(self):
-        r = ncbot.top_playlist_highquality()
-        print r.content
+        r = ncmbot.top_playlist_highquality()
+        print 'test_TOP_PLAYLIST_HIGHQUALITY', r.content
         pass
 
     def test_PLAY_LIST_DETAIL(self):
-        r = ncbot.play_list_detail(id='326432061')
-        print r.content
+        r = ncmbot.play_list_detail(id='326432061')
+        print 'test_PLAY_LIST_DETAIL', r.content
         pass
 
     def test_LOGIN(self):
-        # r = ncbot.login(phone='18291994584', password='cxdcxd')
-        # print r.status_code
+        r = ncmbot.login(phone='xxx', password='yyy')
+        print 'test_LOGIN', r.content
         pass
 
     def test_MUSIC_URL(self):
-        r = ncbot.music_url(ids=[
+        r = ncmbot.music_url(ids=[
             68302,
         ])
-        print r.content
+        print 'test_MUSIC_URL', r.content
         pass
 
     def test_LYRIC(self):
-        r = ncbot.lyric(id=68302)
+        r = ncmbot.lyric(id=68302)
         print 'test_LYRIC', r.content
         pass
 
     def test_MUSIC_COMMENT(self):
-        r = ncbot.music_comment(id=68302)
+        r = ncmbot.music_comment(id=68302)
         print 'test_MUSIC_COMMENT', r.content
 
     # def test_ALBUM_COMMENT(self):
-    #     r = ncbot.album_comment(id=)
+    #     r = ncmbot.album_comment(id=)
 
     def test_SONG_DETAIL(self):
-        r = ncbot.song_detail([
+        r = ncmbot.song_detail([
             68302,
             30500857,
         ])
-        print r.json()
+        print 'test_SONG_DETAIL', r.json()
 
     def test_PERSONAL_FM(self):
-        ncbot.login(phone='18291994584', password='cxdcxd')
-        r = ncbot.personal_fm()
-        print r.content
+        ncmbot.login(phone='xxx', password='yyy')
+        r = ncmbot.personal_fm()
+        print 'test_PERSONAL_FM', r.content
 
 
 if __name__ == '__main__':

@@ -1,6 +1,6 @@
-# ncbot
+# ncmbot
 
-> NeteaseCloudBot 的简称 `ncbot` ，网易云音乐助手
+> NeteaseCloudMusicBot 的简称 `ncmbot` ，网易云音乐助手
 > 
 > 这是一个网易云音乐的 Python 组件库，你可以随心所欲的玩音乐。
 
@@ -9,14 +9,14 @@
 - 感谢 [darknessomi](https://github.com/darknessomi/musicbox) 为本组件提供算法支持
 
 ## 简介
-ncbot 给你提供了多种接口，你可以登录、获取动态、获取音乐列表、下载音乐等等的。旨在将网易云音乐的接口封装为组件，提供给开发者在任何平台使用。
+ncmbot 给你提供了多种接口，你可以登录、获取动态、获取音乐列表、下载音乐等等的。旨在将网易云音乐的接口封装为组件，提供给开发者在任何平台使用。
 
 
 ## 安装
 ```shell
-$ pip install ncbot
+$ pip install ncmbot
 or
-$ easy_install ncbot
+$ easy_install ncmbot
 ```
 
 ## 接口列表
@@ -56,16 +56,16 @@ $ easy_install ncbot
 
 **接口**
 
-`ncbot.login`
+`ncmbot.login`
 
 **调用例子**
 
-`ncbot.login(phone='xxx', password='yyy')`
+`ncmbot.login(phone='xxx', password='yyy')`
 
 **返回处理**
 
 ```python
-bot = ncbot.login(phone='xxx', password='yyy')
+bot = ncmbot.login(phone='xxx', password='yyy')
 bot.content # bot.json()
 ```
 
@@ -84,11 +84,11 @@ bot.content # bot.json()
 
 **接口**
 
-`ncbot.user_play_list`
+`ncmbot.user_play_list`
 
 **调用例子**
 
-`ncbot.user_play_list(uid='36554272')`
+`ncmbot.user_play_list(uid='36554272')`
 
 ### 获取用户电台
 获取用户的 FM 电台歌曲列表。
@@ -105,11 +105,11 @@ bot.content # bot.json()
 
 **接口**
 
-`ncbot.user_dj`
+`ncmbot.user_dj`
 
 **调用例子**
 
-`ncbot.user_dj(uid='36554272')`
+`ncmbot.user_dj(uid='36554272')`
 
 ### 获取用户关注列表
 获取用户的关注列表。
@@ -125,11 +125,11 @@ bot.content # bot.json()
 
 **接口**
 
-` ncbot.user_follows`
+` ncmbot.user_follows`
 
 **调用例子**
 
-` ncbot.user_follows(uid='36554272')`
+` ncmbot.user_follows(uid='36554272')`
 
 ### 获取用户粉丝
 获取用户的粉丝列表。
@@ -145,11 +145,11 @@ bot.content # bot.json()
 
 **接口**
 
-` ncbot.user_followeds`
+` ncmbot.user_followeds`
 
 **调用例子**
 
-` ncbot.user_followeds(uid='36554272')`
+` ncmbot.user_followeds(uid='36554272')`
 
 ### 获取用户动态
 获取用户的动态。
@@ -164,31 +164,31 @@ bot.content # bot.json()
 
 **接口**
 
-` ncbot.user_event`
+` ncmbot.user_event`
 
 **调用例子**
 
-` ncbot.user_event(uid='36554272')`
+` ncmbot.user_event(uid='36554272')`
 
 ### 获取用户播放列表
 获取用户的播放列表。
->不用登录。
+>必须登录。
 
 **参数解释**
 
 |参数名|可选|简介|
 |----|----|----|
-|uid|必选|用户的ID，ID可以通过登录、或者其他接口获取
+|uid|必选|登录之后获取到的用户 ID
 |type|可选，默认 0| 0:获取所有数据 allData 1：获取 weekData
 
 
 **接口**
 
-`ncbot.user_record`
+`ncmbot.user_record`
 
 **调用例子**
 
-`ncbot.user_record(uid='36554272')`
+`ncmbot.user_record(uid='36554272')`
 
 
 ### 获取好友的动态
@@ -198,13 +198,13 @@ bot.content # bot.json()
 
 **接口**
 
-`ncbot.event()`
+`ncmbot.event()`
 
 **调用例子**
 
 ```python
-ncbot.login(phone='18291994584', password='cxdcxd')
-bot = ncbot.event()
+ncmbot.login(phone='18291994584', password='cxdcxd')
+bot = ncmbot.event()
 print bot.content
 ```
 
@@ -226,11 +226,11 @@ print bot.content
 
 **接口**
 
-`ncbot.top_playlist_highquality`
+`ncmbot.top_playlist_highquality`
 
 **调用例子**
 
-`ncbot.top_playlist_highquality(cat='华语')`
+`ncmbot.top_playlist_highquality(cat='华语')`
 
 
 ### 获取歌单中的所有音乐
@@ -249,11 +249,11 @@ print bot.content
 
 **接口**
 
-`ncbot.play_list_detail`
+`ncmbot.play_list_detail`
 
 **调用例子**
 
-`ncbot.play_list_detail(id='326432061')`
+`ncmbot.play_list_detail(id='326432061')`
 
 
 
@@ -272,12 +272,12 @@ print bot.content
 
 **接口**
 
-`ncbot.music_url`
+`ncmbot.music_url`
 
 **调用例子**
 
 ```python
-r = ncbot.music_url(ids=[68302,])
+r = ncmbot.music_url(ids=[68302,])
 print r.content
 ```
 
@@ -298,12 +298,12 @@ print r.content
 
 **接口**
 
-`ncbot.search`
+`ncmbot.search`
 
 **调用例子**
 
 ```python
-ncbot.search(keyword='东风破')
+ncmbot.search(keyword='东风破')
 ```
 
 ### 获取歌词
@@ -319,12 +319,12 @@ ncbot.search(keyword='东风破')
 
 **接口**
 
-`ncbot.lyric`
+`ncmbot.lyric`
 
 **调用例子**
 
 ```python
-ncbot.lyric(id = 68302)
+ncmbot.lyric(id = 68302)
 ```
 
 ### 获取音乐的评论
@@ -341,12 +341,12 @@ ncbot.lyric(id = 68302)
 
 **接口**
 
-`ncbot.music_comment`
+`ncmbot.music_comment`
 
 **调用例子**
 
 ```python
-ncbot.music_comment(id=68302)
+ncmbot.music_comment(id=68302)
 ```
 
 ### 获取歌曲详情
@@ -363,12 +363,12 @@ ncbot.music_comment(id=68302)
 
 **接口**
 
-`ncbot.song_detail`
+`ncmbot.song_detail`
 
 **调用例子**
 
 ```python
-r = ncbot.song_detail([
+r = ncmbot.song_detail([
             68302,
             30500857,
         ])
@@ -389,12 +389,12 @@ print r.content
 
 **接口**
 
-`ncbot.personal_fm`
+`ncmbot.personal_fm`
 
 **调用例子**
 
 ```python
-ncbot.login(phone='xxx', password='yyy')
-r = ncbot.personal_fm()
+ncmbot.login(phone='xxx', password='yyy')
+r = ncmbot.personal_fm()
 print r.content
 ```

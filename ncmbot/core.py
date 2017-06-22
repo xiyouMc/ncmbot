@@ -16,7 +16,7 @@ from .util.encrypt import encrypted_request
 from .util import cookiesJar
 from utils import get_encoding_from_headers
 
-__title__ = 'ncbot'
+__title__ = 'ncmbot'
 __version__ = '0.1.0'
 __build__ = 0x000100
 __author__ = 'XiyouMc'
@@ -27,7 +27,7 @@ __all__ = [
     'NCloudBot', 'Response', 'login', 'user_play_list', 'user_dj', 'search',
     'user_follows', 'user_followeds', 'user_event', 'event',
     'top_playlist_highquality', 'play_list_detail', 'music_url', 'lyric',
-    'music_comment', 'song_detail', 'personal_fm'
+    'music_comment', 'song_detail', 'personal_fm', 'user_record'
 ]
 
 
@@ -355,7 +355,7 @@ def user_event(uid):
 
 
 def user_record(uid, type=0):
-    """获取用户的播放列表
+    """获取用户的播放列表,必须登录
 
     :param uid: 用户的ID，可通过登录或者其他接口获取
     :param type: (optional) 数据类型，0：获取所有记录，1：获取 weekData
