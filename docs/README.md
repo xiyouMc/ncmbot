@@ -1,3 +1,7 @@
+>版权声明，来自公众号：DeveloperPython
+
+<img src="https://github.com/xiyouMc/ncmbot/blob/master/image/qrcode.jpg?raw=true" width = "200" height = "200" alt="图片名称" align=center />   
+
 ## ncmbot
 
 > NeteaseCloudMusicBot 的简称 `ncmbot` ，网易云音乐助手
