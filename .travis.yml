@@ -4,6 +4,8 @@ python:
 
 before_install: "sudo apt-get update"
 install: "pip install -q -r requirements.txt"
+script: 
+  - python test_ncbot.py
 branches:
   only:
     - master
