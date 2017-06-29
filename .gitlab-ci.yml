@@ -7,7 +7,7 @@ before_script:
   - python -V                                   # Print out python version for debugging
   # Uncomment next line if your Django app needs a JS runtime:
   # - apt-get update -q && apt-get install nodejs -yqq
-  - sudo apt-get update
+  # - sudo apt-get update
   - pip install -r requirements.txt --user
 
 # before_install: "sudo apt-get update"
