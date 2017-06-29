@@ -1,0 +1,17 @@
+# language: python
+python:
+  - "2.7"
+
+before_script:
+  - python -V                                   # Print out python version for debugging
+  # Uncomment next line if your Django app needs a JS runtime:
+  # - apt-get update -q && apt-get install nodejs -yqq
+  - pip install -r requirements.txt
+
+# before_install: "sudo apt-get update"
+# install: "pip install -q -r requirements.txt"
+script: 
+  - python test_ncbot.py
+branches:
+  only:
+    - master
