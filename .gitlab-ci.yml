@@ -13,6 +13,6 @@ before_script:
 Test:
   script: 
     - python test_ncbot.py
-branches:
-  only:
-    - master
+  branches:
+    only:
+      - master
