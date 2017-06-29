@@ -4,7 +4,6 @@
 
 before_script:
   - id -un
-  - mkdir /usr/lib/python2.7/dist-packages/test
   - python -V                                   # Print out python version for debugging
   # Uncomment next line if your Django app needs a JS runtime:
   # - apt-get update -q && apt-get install nodejs -yqq
