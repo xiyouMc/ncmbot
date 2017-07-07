@@ -1,4 +1,4 @@
-![][py2x] ![][rating] ![][build] [![GitHub license][license]][license_file]
+![][py2x] ![][py3x] ![][rating] ![][build] [![GitHub license][license]][license_file]
 
 NeteaseCloudMusic Bot for Philharmonic™
 ===========
@@ -74,6 +74,6 @@ bot.content # bot.json()
 [network]: https://github.com/xiyouMc/ncmbot/network
 
 [py2x]: https://img.shields.io/badge/python-2.x-brightgreen.svg
-
+[py3x]: https://img.shields.io/badge/python-3.x-brightgreen.svg
 [issues_img]: https://img.shields.io/github/issues/xiyouMc/ncmbot.svg
 [issues]: https://github.com/xiyouMc/ncmbot/issues
