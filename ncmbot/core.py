@@ -42,6 +42,8 @@ class NCloudBot(object):
     _METHODS = {
         # 登录模块
         'LOGIN': '/weapi/login/cellphone?csrf_token=',
+        # 邮箱登录
+        'EMAIL_LOGIN': '/weapi/login?csrf_token=',
         # 获取用户信息
         'USER_INFO': '/weapi/subcount',
         # 获取用户歌单,收藏的歌单 , 指定 UserId , 不需要登录
@@ -226,7 +228,7 @@ def login(password, phone=None, email=None, rememberLogin=True):
         raise ParamsError()
     r = NCloudBot()
     # r.username = phone or email
-    r.method = 'LOGIN'
+
     md5 = hashlib.md5()
     md5.update(password)
     password = md5.hexdigest()
@@ -234,8 +236,10 @@ def login(password, phone=None, email=None, rememberLogin=True):
     r.data = {'password': password, 'rememberLogin': rememberLogin}
     if phone is not None:
         r.data['phone'] = phone
+        r.method = 'LOGIN'
     else:
         r.data['username'] = email
+        r.method = 'EMAIL_LOGIN'
     r.send()
 
     return r.response
