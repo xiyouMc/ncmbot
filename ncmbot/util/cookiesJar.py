@@ -1,11 +1,11 @@
 # coding:utf-8
-import cookielib
+import http.cookiejar
 import os
 import requests
 
 
 def save_cookies(session, username):
-    new_cookie_jar = cookielib.LWPCookieJar(username + '.txt')
+    new_cookie_jar = http.cookiejar.LWPCookieJar(username + '.txt')
     # 将转换成字典格式的RequestsCookieJar（这里我用字典推导手动转的）保存到LWPcookiejar中
     requests.utils.cookiejar_from_dict(
         {c.name: c.value
@@ -21,7 +21,7 @@ def save_cookies(session, username):
 
 def read_cookies(username):
     # 实例化一个LWPCookieJar对象
-    load_cookiejar = cookielib.LWPCookieJar()
+    load_cookiejar = http.cookiejar.LWPCookieJar()
     # 从文件中加载cookies(LWP格式)
     load_cookiejar.load(
         'cookies/' + username + '.txt',
